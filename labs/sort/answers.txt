@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: It performs very fast on sortd list, but gets exponentially slower on other lists as the datasize grows.
+
+sort2 uses: Merge sort
+
+How do you know?: Doesn't seem to be getting exponentially slower when the size of data grows. Also, it's faster than sort3, as Merge sort should be.
+
+sort3 uses: Selection sort
+
+How do you know?: It doesn't any faster on the sorted list (eliminating Bubble sort), and it's slower than sort2, leaving Selection sort.
