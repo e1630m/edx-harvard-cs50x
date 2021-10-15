@@ -4,40 +4,30 @@
 #include <string.h>
 #include <ctype.h>
 
+int get_height(string input)
+{
+    for (int i = 0; i < strlen(input); i++)
+    {
+        if (!isdigit(input[i]))
+        {
+            return -1;
+        }
+    }
+    return atoi(input);
+}
+
+
 int main(void)
 {
+    char *pyramid = "########";
     int h = -1;
     while (h < 1 || h > 8)
     {
-        string tmp = get_string("Height: ");
-        for (int i = 0; i < strlen(tmp); i++)
-        {
-            if (!isdigit(tmp[i]))
-            {
-                break;
-            }
-            if (i == strlen(tmp) - 1)
-            {
-                h = atoi(tmp);
-            }
-        }
+        h = get_height(get_string("Height: "));
     }
 
     for (int i = 1; i <= h; i++)
     {
-        for (int j = h - i; j > 0; j--)
-        {
-            printf(" ");
-        }
-        for (int j = 0; j < i; j++)
-        {
-            printf("#");
-        }
-        printf("  ");
-        for (int j = 0; j < i; j++)
-        {
-            printf("#");
-        }
-        printf("\n");
+        printf("%*s%.*s  %.*s\n", h - i, "", i, pyramid, i, pyramid);
     }
 }
