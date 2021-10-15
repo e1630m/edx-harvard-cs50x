@@ -4,6 +4,5 @@ while not (0 < h < 9):
         h = int(input('Height: '))
     except ValueError:
         h = -1
-for i in range(h):
-    l = ' ' * (h - i - 1) + '#' * (i + 1)
-    print(f'{l}  {"#" * (i + 1)}')
+for i in range(1, h + 1):
+    print(f'{("#" * i).rjust(h, " ")}  {"#" * i}')
