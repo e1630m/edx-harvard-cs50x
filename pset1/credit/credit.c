@@ -44,7 +44,7 @@ int main(void)
     if (luhn(card, len - 1))
     {
         brand = (len == 15 && f == 3 && (s == 4 || s == 7)) ? "AMEX\n" : brand;
-        brand = ((len == 13 && f == 4) || (len == 16 && f == 4)) ? "VISA\n" : brand;
+        brand = ((len == 13 || len == 16) && f == 4) ? "VISA\n" : brand;
         brand = (len == 16 && f == 5 && s > 0 && s < 6) ? "MASTERCARD\n" : brand;
     }
     printf("%s", brand);
