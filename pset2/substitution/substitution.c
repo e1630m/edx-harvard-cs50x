@@ -6,40 +6,25 @@
 
 int main(int argc, char *argv[])
 {
-    if (argc != 2)
+    if (argc != 2 || strlen(argv[1]) != 26)
     {
-        printf("Usage: ./substitution key");
-        return 1;
-    }
-    else if (strlen(argv[1]) != 26)
-    {
-        printf("Key must contain 26 characters.");
+        string err = argc != 2 ? "Usage: ./substitution key" : "Key must contain 26 characters.";
+        printf("%s\n", err);
         return 1;
     }
     string key = argv[1];
+    int count[26] = {};
     for (int i = 0; i < 26; i++)
     {
-        if (isalpha(key[i]))
+        if (!isalpha(key[i]))
         {
-            key[i] = tolower(key[i]);
-        }
-        else
-        {
-            printf("Key must be alphabetical.");
+            printf("Key must be alphabetical.\n");
             return 1;
         }
-
-        int count = 0;
-        for (int j = 0; j < 26; j++)
+        key[i] = tolower(key[i]);
+        if (++count[key[i] - 'a'] > 1)
         {
-            if (key[i] == tolower(key[j]))
-            {
-                count++;
-            }
-        }
-        if (count > 1)
-        {
-            printf("No duplicates");
+            printf("Duplicated key is not allowed.\n");
             return 1;
         }
     }
@@ -47,21 +32,10 @@ int main(int argc, char *argv[])
     printf("ciphertext: ");
     for (int i = 0; i < strlen(plain); i++)
     {
-        if (isalpha(plain[i]))
-        {
-            if (!isupper(plain[i]))
-            {
-                printf("%c", key[plain[i] - 'a']);
-            }
-            else
-            {
-                printf("%c", toupper(key[plain[i] - 'A']));
-            }
-        }
-        else
-        {
-            printf("%c", plain[i]);
-        }
+        char to_print = plain[i];
+        to_print = !isalpha(to_print) ? to_print : isupper(plain[i]) ? 
+                   toupper(key[plain[i] - 'A']) : key[plain[i] - 'a'];
+        printf("%c", to_print);
     }
     printf("\n");
 }
