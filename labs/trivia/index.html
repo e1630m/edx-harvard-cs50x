@@ -6,10 +6,71 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
 
-        <script>
+        <script type="text/javascript">
+            var rm_bgcolor = 0;
 
-            // TODO: Add code to check answers to questions
+            function is_prime(number) {
+                if (number < 4)
+                    return number > 1;
+                if (number % 2 == 0 || number % 3 == 0)
+                    return 0;
+                let limit = number ** 0.5;
+                for (let i = 5; i <= limit; i += 6) {
+                    if (number % i == 0 || number % (i + 2) == 0)
+                        return 0;
+                }
+                return 1;
+            }
 
+            function mc(id) {
+                if (rm_bgcolor)
+                    document.getElementById(rm_bgcolor).style.backgroundColor = "";
+                if (is_prime(id.slice(0, id.indexOf('#')))) {
+                    document.querySelector(id.slice(id.indexOf('#'))).innerHTML = "Correct!";
+                    document.getElementById(id).style.backgroundColor = "#50C878";
+                } else {
+                    document.querySelector(id.slice(id.indexOf('#'))).innerHTML = "Incorrect.";
+                    document.getElementById(id).style.backgroundColor = "#FF6961";
+                }
+                rm_bgcolor = id;
+            }
+
+            function fnv(s) {
+                var h = 2161136261 | 0;
+                for (var i = 0; i < s.length; i++) {
+                    h = Math.imul(h ^ s[i], 16777619);
+                }
+                return h
+            }
+            
+            function fr(button_id) {
+                if (rm_bgcolor)
+                    document.getElementById(rm_bgcolor).style.backgroundColor = "";
+                let id = button_id.replace('submit', '');
+                let input = document.getElementById(id + 'input').value;
+                if (store_ans(id.replace('p', '')).indexOf(fnv(input)) >= 0) {
+                    document.querySelector('#' + id).innerHTML = "Correct!";
+                    document.getElementById(button_id).style.backgroundColor = "#50C878";
+                } else {
+                    document.querySelector('#' + id).innerHTML = "Incorrect.";
+                    document.getElementById(button_id).style.backgroundColor = "#FF6961";
+                }
+                rm_bgcolor = button_id;
+            }
+
+            function create_2d_array(height, width) {
+                const arr = new Array(height);
+                for (let i = 0; i < arr.length; i++) {
+                    arr[i] = new Array(width)
+                }
+                return arr;
+            }
+
+            function store_ans(id) {
+                const ans = create_2d_array(10, 100);
+                ans[2] = [1648776151, 408206927, -1549494345, 2077751557, 1394267413, -1564992473, 1394267413, -1564992473];
+                return ans[id];
+            }
         </script>
 
     </head>
@@ -24,17 +85,22 @@
             <div class="section">
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
-
-                <!-- TODO: Add multiple choice question here -->
-
+                <h3>What is the approximate ratio of people to sheep in New Zealand?</h3>
+                <button class="mc" id="40466438269#p1" onClick="mc(this.id)">6 people per 1 sheep</button>
+                <button class="mc" id="15471525769#p1" onClick="mc(this.id)">3 people per 1 sheep</button>
+                <button class="mc" id="66115596237#p1" onClick="mc(this.id)">1 people per 1 sheep</button>
+                <button class="mc" id="14222640527#p1" onClick="mc(this.id)">1 people per 3 sheep</button>
+                <button class="mc" id="16237343301#p1" onClick="mc(this.id)">1 people per 6 sheep</button>
+                <p id="p1"></p>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
-
-                <!-- TODO: Add free response question here -->
-
+                <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
+                <input type="text" id="p2input">
+                <button class="fr" id="p2submit" onClick="fr(this.id)">Check Answer</button>
+                <p id="p2"></p2>
             </div>
 
         </div>
