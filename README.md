@@ -39,7 +39,7 @@
 |  6  | [DNA](https://cs50.harvard.edu/x/2021/psets/6/dna/)                                              | [dna.py](./pset6/dna/dna.py)                                                                                                                                   |   38   |
 |  7  | [Movies](https://cs50.harvard.edu/x/2021/psets/7/movies/)                                        | [pset7/movies](./pset7/movies)                                                                                                                                 |   90   |
 |  7  | [Fiftyville](https://cs50.harvard.edu/x/2021/psets/7/fiftyville/)                                | [log.sql](./pset7/fiftyville/log.sql) \| [answers.txt](./pset7/fiftyville/answers.txt)                                                                         |   156  |
-|  8  | [Homepage](https://cs50.harvard.edu/x/2021/psets/8/homepage/)                                    | [pset8/homepage](./pset8/homepage) ([Demo](https://e1630m.github.io/demo/pset8/index.html))                                                                    |   156  |
+|  8  | [Homepage](https://cs50.harvard.edu/x/2021/psets/8/homepage/)                                    | [pset8/homepage](./pset8/homepage) ([Demo](https://e1630m.github.io/demo/pset8/index.html))                                                                    |   726  |
 
 
 ## Course Infos
