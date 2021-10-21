@@ -37,8 +37,10 @@
 |  6  | [Credit](https://cs50.harvard.edu/x/2021/psets/6/credit/)                                        | [credit.py](./pset6/credit/credit.py)                                                                                                                          |   22   |
 |  6  | [Readability](https://cs50.harvard.edu/x/2021/psets/6/readability/)                              | [readability.py](./pset6/readability/readability.py)                                                                                                           |   11   |
 |  6  | [DNA](https://cs50.harvard.edu/x/2021/psets/6/dna/)                                              | [dna.py](./pset6/dna/dna.py)                                                                                                                                   |   38   |
-|  7  | [Movies](https://cs50.harvard.edu/x/2021/psets/7/movies/)                                        | [1-13.sql](./pset7/movies)                                                                                                                                     |   90   |
+|  7  | [Movies](https://cs50.harvard.edu/x/2021/psets/7/movies/)                                        | [pset7/movies](./pset7/movies)                                                                                                                                 |   90   |
 |  7  | [Fiftyville](https://cs50.harvard.edu/x/2021/psets/7/fiftyville/)                                | [log.sql](./pset7/fiftyville/log.sql) \| [answers.txt](./pset7/fiftyville/answers.txt)                                                                         |   156  |
+|  8  | [Homepage](https://cs50.harvard.edu/x/2021/psets/8/homepage/)                                    | [pset8/homepage](./pset8/homepage) ([Demo](https://e1630m.github.io/demo/pset8/index.html))                                                                    |   156  |
+
 
 ## Course Infos
 * Course: [CS50's Introduction to Computer Science](https://www.edx.org/course/introduction-computer-science-harvardx-cs50x)
