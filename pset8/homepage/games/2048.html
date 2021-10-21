@@ -5,8 +5,8 @@
         <meta charset="utf-8" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-        <link href="css/styles.css" rel="stylesheet">
-        <title>e1630m landing page - cs50x pset8/homepage demo</title>
+        <link href="../css/styles.css" rel="stylesheet">
+        <title>2048 - cs50x pset8/homepage demo</title>
     </head>
     <body>
         <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" aria-label="mainNav">
@@ -14,19 +14,19 @@
                 <div class="navbar-collapse collapse" id="mainNav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">home</a>
+                            <a class="nav-link" aria-current="page" href="../index.html">home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">about</a>
+                            <a class="nav-link" href="../about.html">about</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="keyboard.html">keyboard</a>
+                            <a class="nav-link" href="../keyboard.html">keyboard</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="gamesDropdown" data-bs-toggle="dropdown" aria-expanded="false">games</a>
                             <ul class="dropdown-menu" aria-labelledby="gamesDropdown">
-                                <li><a class="dropdown-item" href="games/2048.html">2048</a></li>
-                                <li><a class="dropdown-item" href="games/breakout.html">breakout</a></li>
+                                <li><a class="dropdown-item active" href="2048.html">2048</a></li>
+                                <li><a class="dropdown-item" href="breakout.html">breakout</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -39,9 +39,39 @@
         </nav>
         <div class="container">
             <div class="vertical-center">
-                <h2>this is just a skeleton of what i would like to implement ultimately.</h2>
-                <h5>TODOs:</h5>
-                <li><a href="games/2048.html">2048</a></li>
+                <h1>2048</h1>
+                <div class="game">    
+                    <div class="grid">
+                        <div class="grid_r">
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                        </div>
+    
+                        <div class="grid_r">
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                        </div>
+    
+                        <div class="grid_r">
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                        </div>
+    
+                        <div class="grid_r">
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                            <div class="grid_c"></div>
+                        </div>
+                    </div>
+                </div>
+                <script src="../js/2048.js"></script>
             </div>
         </div>
         <footer>
